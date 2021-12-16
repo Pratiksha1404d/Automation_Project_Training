@@ -1,15 +1,11 @@
-package com.abstraction;
+package com.FinalKeyword;
 
-public abstract class BaseTest {
+public class BaseTest {
 
-	public abstract void initializewebEnv();   // Abstract Method
-	
-	public void teardown(){
-		System.out.println("Close Browser");    //Non-Abstract Method
+	public static void main(String[] args) {
+		BaseClass objBaseClass = new BaseClass();
+		objBaseClass.Final_Method1();
+
 	}
-		
-	
-	}
-	
-	
 
+}
