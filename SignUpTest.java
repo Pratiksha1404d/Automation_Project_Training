@@ -1,13 +1,10 @@
-package com.fb.signup.testScripts;
+package com.scripts;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import com.fb.signup.pagefactory.SignUpPage;
 import com.generic.BaseTest;
 import com.generic.Utilities;
+import com.pagefactory.SignUpPage;
 
 public class SignUpTest extends BaseTest
 {
@@ -89,7 +86,19 @@ public class SignUpTest extends BaseTest
     	   System.out.println("year : "+intYear);
     	   objSignUpPage.selectYear(intYear);
    	}	
-	   
+     @Test
+  	 public void TC_009() //Gender
+   	{
+    	   String strGender=objUtilities.generateGender();
+    	   System.out.println("Gender : "+strGender);
+    	   objSignUpPage.selectGender(strGender);
+   	}
+     
+     @Test
+  	 public void TC_010() 
+   	{
+    	 objSignUpPage.clickOnSignUpButton();
+   	}   
 
 	
 }
