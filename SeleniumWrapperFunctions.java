@@ -85,6 +85,18 @@ public class SeleniumWrapperFunctions {
 		return false;
 	}
 	}
+	
+	public boolean isDisplayed(By locator)
+	{   try{
+		objBaseTest.getDriver().findElement(locator).isDisplayed();
+		 return true;
+	}catch(Exception e){
+		System.out.println("Expection is :"+e.getMessage());
+		e.printStackTrace();
+		return false;
+	}
+	}
+	
 	public boolean dragAndDropTo(By fromlocator , By tolocator)
 	{
 		try{

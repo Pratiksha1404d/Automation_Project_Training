@@ -7,12 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class BaseTest {
 
 private WebDriver driver = null;
-private String strURL="https://www.facebook.com";
+private String strURL="https://opensource-demo.orangehrmlive.com/";
 
 private SeleniumWrapperFunctions objSeleniumWrapperFunctions;
 	
 	public void initializeWebEnvironment(){
-		System.setProperty("webdriver.chrome.driver","C:/Automation-Workspace/FacebookTAF/src/main/resources/drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:/Automation-Workspace/OrangeHRM/src/main/resources/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		objSeleniumWrapperFunctions = new SeleniumWrapperFunctions(this);
 		this.setObjSeleniumWrapperFunctions(objSeleniumWrapperFunctions);
@@ -37,7 +37,7 @@ private SeleniumWrapperFunctions objSeleniumWrapperFunctions;
 	public void tearDown()
 	{
 		System.out.println("Closing Browser");
-	//    driver.close();	
+	//   driver.close();	
 		
 	}
 
