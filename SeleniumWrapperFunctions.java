@@ -86,7 +86,7 @@ public class SeleniumWrapperFunctions {
 	}
 	}
 	
-	public boolean isDisplayed(By locator)
+	public boolean isPresent(By locator)  
 	{   try{
 		objBaseTest.getDriver().findElement(locator).isDisplayed();
 		 return true;
@@ -156,6 +156,8 @@ public class SeleniumWrapperFunctions {
 	}
 
 	}
+
+	
 	
 
 }

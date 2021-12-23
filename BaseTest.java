@@ -7,12 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class BaseTest {
 
 private WebDriver driver = null;
-private String strURL="https://opensource-demo.orangehrmlive.com/";
+private String strURL="http://automationpractice.com/index.php";
 
 private SeleniumWrapperFunctions objSeleniumWrapperFunctions;
 	
 	public void initializeWebEnvironment(){
-		System.setProperty("webdriver.chrome.driver","C:/Automation-Workspace/OrangeHRM/src/main/resources/drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/main/resources/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		objSeleniumWrapperFunctions = new SeleniumWrapperFunctions(this);
 		this.setObjSeleniumWrapperFunctions(objSeleniumWrapperFunctions);
