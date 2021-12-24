@@ -17,7 +17,7 @@ public class AddToCartFlow {
 		objAddToCartPage =new AddToCartPage(objBaseTest);
 	}
     
-    public void AddToCart() throws InterruptedException{
+    public void AddToCart() {
     	objAddToCartPage.moveToWomenTab();
     	objAddToCartPage.clickOnTshirt();
     	objAddToCartPage.moveToTshirtImage();

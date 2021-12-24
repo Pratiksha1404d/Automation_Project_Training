@@ -29,7 +29,7 @@ public class AddToCartTest extends BaseTest{
 	}
 	
 	@BeforeClass
-	public void beforeMethod() 
+	public void initilizePreRequisiteEnv() 
 	{
 	 this.initializeWebEnvironment();
 	 this.initializeWebPage();
@@ -37,24 +37,24 @@ public class AddToCartTest extends BaseTest{
 	}
 	
 	@Test
-	public void TC01_LoginToApplication() throws InterruptedException
+	public void TC01_LoginToApplication() 
     {
     objHomePage.verifySignLinkIsdisplayed();
 	objLoginPage.clickOnSignInLink();
-	Thread.sleep(3000);
 	objLoginPage.verifyLoginPageHeaderIsDisplayed();
 	objLoginLogoutFlow.doLogin();
 	objMyAccountPage.validateMyAccountTitle();
+	objLoginPage.getAllLinksOnLoginPage();
     }
 	
 	@Test
-	 public void TC02_AddTshirtToCart() throws InterruptedException
+	 public void TC02_AddTshirtToCart()
 	  {
 		objAddToCartFlow.AddToCart();
 	  }
 	
 	@AfterClass
-	public void afterMethod()
+	public void tearDownWebEnv()
 	{
 		this.tearDown();
 	}

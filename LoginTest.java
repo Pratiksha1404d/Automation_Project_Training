@@ -42,11 +42,10 @@ public class LoginTest extends BaseTest {
 
 	
     @Test
-    public void TC01_VerfiyLoginFunctionality() throws InterruptedException
+    public void TC01_VerfiyLoginFunctionality() 
     {
     objHomePage.verifySignLinkIsdisplayed();
 	objLoginPage.clickOnSignInLink();
-	Thread.sleep(3000);
 	objLoginPage.verifyLoginPageHeaderIsDisplayed();
 	objLoginLogoutFlow.doLogin();
    }

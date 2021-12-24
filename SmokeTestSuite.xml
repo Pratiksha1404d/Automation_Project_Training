@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeTestSuite">
+
+<!-- Report Creation -->
+<listeners>
+<listener class-name="com.generic.Listeners"></listener>
+<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+</listeners>
+
+<test name="Dummy Automation Site Test">
+<classes>
+<class name="com.scripts.AddToCartTest"/>
+</classes>
+</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+
+
+ 

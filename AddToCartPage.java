@@ -46,9 +46,8 @@ public class AddToCartPage {
 	public void clickOnAddCartButton(){
 		Assert.assertTrue(objBaseTest.getObjSeleniumWrapperFunctions().click(loc_btn_addToCart));
 	}
-	public void clickOnProceedToCheckOut() throws InterruptedException{
-		
-		Thread.sleep(5000);
+	public void clickOnProceedToCheckOut(){
+		objBaseTest.getObjSeleniumWrapperFunctions().fluentWait(loc_btnProceedToCheckOut);
 		Assert.assertTrue(objBaseTest.getObjSeleniumWrapperFunctions().click(loc_btnProceedToCheckOut));
 	}
 	public void moveToLinkToCart() {
