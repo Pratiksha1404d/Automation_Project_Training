@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Suite" parallel="tests">
+
+<listeners>
+<listener class-name="com.generic.Listeners"></listener>
+<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+</listeners>
+
+
+<test name="FireFox Test">        
+<parameter name="BrowserName" value="FireFox"></parameter>
+<classes>
+<class name="com.parallelTest.TestBrowser"/>
+</classes>
+</test> <!-- Test -->
+
+
+<test name="IE Test">        
+<parameter name="BrowserName" value="Ie"></parameter>
+<classes>
+<class name="com.parallelTest.TestBrowser"/>
+</classes>
+</test> <!-- Test -->
+
+
+<test name="Chrome Test">        
+<parameter name="BrowserName" value="chrome"></parameter>
+<classes>
+<class name="com.parallelTest.TestBrowser"/>
+</classes>
+</test> <!-- Test -->
+
+
+</suite> <!-- Suite -->
+
+
+
+
+ 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite">
+
+<listeners>
+<listener class-name="com.generic.Listeners"></listener>
+<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+</listeners>
+
+
+<test name="Regression Login Test">        
+<classes>
+<class name="com.RegressionTest.TestCase1"/>
+</classes>
+</test> <!-- Test -->
+
+
+
+<test name="TiTle Validation Test">        
+<classes>
+<class name="com.RegressionTest.TestCase2"/>
+</classes>
+</test> <!-- Test -->
+
+
+
+<test name="Sign up Test">        
+<classes>
+<class name="com.RegressionTest.TestCase3"/>
+</classes>
+</test> <!-- Test -->
+
+
+
+</suite> <!-- Suite -->
+
+
+
+
+ 
