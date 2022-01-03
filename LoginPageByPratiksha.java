@@ -27,7 +27,6 @@ public class LoginPageByPratiksha {
 			this.objPojo = pojo;
 		}
 		
-		
 		//Locators
 		
 		By loc_hdreMedicareSync = By.xpath("//div[@class='text-center client-logo']/a/img");
@@ -35,7 +34,7 @@ public class LoginPageByPratiksha {
 		By loc_inpPassword = By.xpath("//input[@id='Password']");
 		By loc_drpDashBoard = By.xpath("//select[@id='StartIN']");
 		By loc_btnGetStarted = By.xpath("//button[text()='Get Started']");
-		
+		By loc_errorMessageInvalidPassword = By.xpath("//ul//li[text()='Invalid password...Try Again!!!']");
 		
 		public void verifyUserIsOneMedicareSyncLoginPage(){
 			objPojo.getObjWrapperFunctions().checkElementDisplayed(loc_hdreMedicareSync);
@@ -53,7 +52,7 @@ public class LoginPageByPratiksha {
 					objPojo.getObjWrapperFunctions().setText(loc_inpPassword, password));
 		}
 		
-		public void selectDashBoardOptipons(String strLoginWithOption){
+		public void selectDashBoardOptions(String strLoginWithOption){
 			objPojo.getObjWrapperFunctions().checkElementDisplayed(loc_drpDashBoard);
 			objPojo.getObjUtilities().logReporter("user select the login option with '"+strLoginWithOption+"' .", objPojo.getObjWrapperFunctions().selectDropDownOption(loc_drpDashBoard, strLoginWithOption, "Text"));
 
@@ -70,11 +69,22 @@ public class LoginPageByPratiksha {
 					objPojo.getDriver().getTitle(), strTitle,
 					objPojo.getDriver().getTitle().toLowerCase().contains(strTitle.toLowerCase()));
 		}
+		public boolean isInvalidPasswordErrorMessageDisplayed()
+				{
+			
+			return objPojo.getObjWrapperFunctions().checkElementDisplayed(loc_errorMessageInvalidPassword);
+		}
+		
+		public void verifyInvalidPasswordErrorMessageDisplayed()
+		{
+			objPojo.getObjUtilities().logReporter("Verify Invalid Password Error Message Displayed Successfully", objPojo.getObjWrapperFunctions().checkElementDisplayed(loc_errorMessageInvalidPassword));
+		}
 
 		public void clickLogout() {
 			objPojo.getObjUtilities().logReporter("Click 'Logout' button",
 					objPojo.getObjWrapperFunctions().click(By.xpath("")));
 		}
+		
 		
 
 }

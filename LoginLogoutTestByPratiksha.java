@@ -35,20 +35,20 @@ public class LoginLogoutTestByPratiksha extends BaseTest {
     		objLoginPageByPratiksha=new LoginPageByPratiksha(this);
     		objLoginLogoutFlowByPratiksha = new LoginLogoutFlowByPratiksha(this);
     	}
-    	@BeforeClass
+    	@BeforeClass(groups = { "P1", "P2", "P3" })
     	public void initializeEnvironment() {
-    		this.initializeWebEnvironment("excel/KST");
+    		this.initializeWebEnvironment("excel/PRD");
     		this.initializeFlowsAndPages();
     		
     	}
-    	@AfterClass
+    	@AfterClass(groups = { "P1", "P2", "P3" })
     	public void tearDownEnvironment() {
     		this.tearDownWebEnvironment();
     		objCommonFlow = null;
     		objLoginPageByPratiksha=null;
 
     	}
-    	@BeforeMethod
+    	@BeforeMethod(groups = { "P1", "P2", "P3" })
     	public void redirect_Me_To_HomePage_On_SH_Application(Method method) {
     		testCaseID = method.getName();
     		this.startTestExecutionVideoRecording(testCaseID);
@@ -63,11 +63,11 @@ public class LoginLogoutTestByPratiksha extends BaseTest {
     		System.out.println("Video Recording Stopped ....!!");
     	}
 
-    	@Title("TCID_101_VerifyLoginFunctionality")
+    	@Title("TCID_123_VerifyLoginFunctionality")
     	@Description("Verify user should login into the system")
-    	@Test(priority = 1, groups = { "P1" })
-    	public void TCID_101_VerifyLoginFunctionality() {
-    		this.loadTestData("TCID_101_VerifyLoginFunctionality");
+    	//@Test(priority = 1, groups = { "P1" })
+    	public void TCID_123_VerifyLoginFunctionality1() {
+    		this.loadTestData("TCID_123_VerifyLoginFunctionality");
     		if (!this.getObjUtilities().dpString("runmode").equals("Y")) {
     			throw new SkipException("Run Mode 'No'");
     		}
@@ -75,14 +75,20 @@ public class LoginLogoutTestByPratiksha extends BaseTest {
     		objLoginLogoutFlowByPratiksha.doLoginWithExcelParamter();
     	}
     	
-    	@Title("TCID_102_VerifyLogoutFunctionality")
-    	@Description("Verify user should logout system")
-    	@Test(priority = 2, groups = { "P1" })
-    	public void TCID_102_VerifyLogoutFunctionality() {
-    		this.loadTestData("TCID_102_VerifyLogoutFunctionality");
+    	@Title("TCID_124_VerifyInValidPasswordErrorMeassage")
+    	@Description("Verify user should login into the system")
+    	@Test(priority = 1, groups = { "P1" })
+    	public void TCID_124_VerifyInValidPasswordErrorMeassage() {
+    		this.loadTestData("TCID_124_VerifyInValidPasswordErrorMeassage");
     		if (!this.getObjUtilities().dpString("runmode").equals("Y")) {
     			throw new SkipException("Run Mode 'No'");
     		}
-    		objLoginLogoutFlowByPratiksha.doLogoutToTheApplication();
+    		objCommonFlow.openAUT_URL();
+    		objLoginLogoutFlowByPratiksha.doLoginWithExcelParamter();
+    		
     	}
 }
+
+
+    	
+
